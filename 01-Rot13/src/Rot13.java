@@ -19,6 +19,15 @@ public class Rot13 {
         return cadena; 
     }
 
+    private static int indexOf(char[] array, char c) {
+    for (int i = 0; i < array.length; i++) {
+        if (array[i] == c) {
+            return i;
+        }
+    }
+    return -1;
+    }
+
     public static void main(String[] args) {
         String msgs[] = {"ABC","XYZ","Hola, Mr. calçot","Perdó, per tu què és?"};
         String msgsXifrats[] = new String[msgs.length];
