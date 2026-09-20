@@ -13,19 +13,25 @@ public class Rot13 {
     };
 
     public static String xifraRot13(String cadena) {
-        StringBuilder resultat = new StringBuilder();
-        for (char c : cadena.toCharArray()) {
-            resultat.append(desplaçaLletra(c, 13));
+        char[] original = cadena.toCharArray();
+        char[] resultat = new char[original.length];
+
+        for (int i = 0; i < original.length; i++) {
+            resultat[i] = desplaçaLletra(original[i], 13);
         }
-        return resultat.toString();
+
+        return new String(resultat);
     }
 
     public static String desxifraRot13(String cadena) {
-        StringBuilder resultat = new StringBuilder();
-        for (char c : cadena.toCharArray()) {
-            resultat.append(desplaçaLletra(c, -13));
+        char[] original = cadena.toCharArray();
+        char[] resultat = new char[original.length];
+
+        for (int i = 0; i < original.length; i++) {
+            resultat[i] = desplaçaLletra(original[i], -13);
         }
-        return resultat.toString();
+
+        return new String(resultat);
     }
 
     private static int indexOf(char[] array, char c) {
