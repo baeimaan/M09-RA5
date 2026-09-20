@@ -11,6 +11,13 @@ public class Rot13 {
         'j','k','l','m','n','ñ','o','ó','ò','p','q','r','s','t','u','ú','ù',
         'ü','v','w','x','y','z'
     };
+    public static String xifraRot13(String cadena) {
+        return cadena;
+    }
+
+    public static String desxifraRot13(String cadena) {
+        return cadena; 
+    }
 
     public static void main(String[] args) {
         String msgs[] = {"ABC","XYZ","Hola, Mr. calçot","Perdó, per tu què és?"};
