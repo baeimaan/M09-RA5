@@ -27,6 +27,33 @@ public class Rot13 {
     }
     return -1;
     }
+    private static char desplaçaLletra(char c, int desplacament) {
+        int index = indexOf(majuscules, c);
+        if (index != -1) {
+            int nouIndex = index + desplacament;
+            while (nouIndex >= majuscules.length) {
+                nouIndex -= majuscules.length;
+            }
+            while (nouIndex < 0) {
+                nouIndex += majuscules.length;
+            }
+            return majuscules[nouIndex];
+        }
+
+        index = indexOf(minuscules, c);
+        if (index != -1) {
+            int nouIndex = index + desplacament;
+            while (nouIndex >= minuscules.length) {
+                nouIndex -= minuscules.length;
+            }
+            while (nouIndex < 0) {
+                nouIndex += minuscules.length;
+            }
+            return minuscules[nouIndex];
+        }
+
+        return c;
+    }
 
     public static void main(String[] args) {
         String msgs[] = {"ABC","XYZ","Hola, Mr. calçot","Perdó, per tu què és?"};
