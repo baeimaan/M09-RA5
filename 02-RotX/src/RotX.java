@@ -61,6 +61,21 @@ public class RotX {
         return xifraRotX(cadena, -desplacament);
     }
 
+    public static void forcaBrutaRotX(String cadenaXifrada) {
+
+        System.out.println("Missatge xifrat: " + cadenaXifrada);
+        System.out.println("----------------");
+
+        for (int desplacament = 0;
+             desplacament < majuscules.length;
+             desplacament++) {
+
+            System.out.println(
+                "(" + desplacament + ")->" +
+                desxifraRotX(cadenaXifrada, desplacament)
+            );
+        }
+    }
 
 
 }
