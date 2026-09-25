@@ -27,4 +27,40 @@ public class RotX {
                 return majuscules[novaPosicio];
             }
         }
+        for (int i = 0; i < minuscules.length; i++) {
+
+            if (lletra == minuscules[i]) {
+
+                int novaPosicio = (i + desplacament) % minuscules.length;
+
+                if (novaPosicio < 0) {
+                    novaPosicio += minuscules.length;
+                }
+
+                return minuscules[novaPosicio];
+            }
+        }
+           return lletra;
+    }
+
+    public static String xifraRotX(String cadena, int desplacament) {
+
+        char[] resultat = new char[cadena.length()];
+
+        for (int i = 0; i < cadena.length(); i++) {
+
+            resultat[i] =
+                desplacaLletra(cadena.charAt(i), desplacament);
+        }
+
+        return new String(resultat);
+    }
+
+    public static String desxifraRotX(String cadena, int desplacament) {
+
+        return xifraRotX(cadena, -desplacament);
+    }
+
+
+
 }
