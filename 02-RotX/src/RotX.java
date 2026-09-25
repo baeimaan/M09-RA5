@@ -77,5 +77,56 @@ public class RotX {
         }
     }
 
+    public static void main(String[] args) {
 
+        int[] desplacaments = {0, 2, 4, 6};
+
+        String[] missatges = {
+            "ABC",
+            "XYZ",
+            "Hola, Mr. calçot",
+            "Perdó, per tu què és?"
+        };
+
+        String[] xifrats = new String[missatges.length];
+
+
+        System.out.println("Xifrat");
+        System.out.println("------");
+
+        for (int i = 0; i < missatges.length; i++) {
+
+            xifrats[i] =
+                xifraRotX(missatges[i], desplacaments[i]);
+
+            System.out.printf(
+                "(%d)-%-22s => %s%n",
+                desplacaments[i],
+                missatges[i],
+                xifrats[i]
+            );
+        }
+
+
+        System.out.println("\nDesxifrat");
+        System.out.println("---------");
+
+        for (int i = 0; i < missatges.length; i++) {
+
+            System.out.printf(
+                "(%d)%-22s => %s%n",
+                desplacaments[i],
+                xifrats[i],
+                desxifraRotX(
+                    xifrats[i],
+                    desplacaments[i]
+                )
+            );
+        }
+
+
+        System.out.println();
+
+        forcaBrutaRotX(xifrats[3]);
+    }
 }
