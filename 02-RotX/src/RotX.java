@@ -10,4 +10,21 @@ public class RotX {
         'j','k','l','m','n','ñ','o','ó','ò','p','q','r','s','t','u','ú','ù',
         'ü','v','w','x','y','z'
     };
+    
+     private static char desplacaLletra(char lletra, int desplacament) {
+
+        
+        for (int i = 0; i < majuscules.length; i++) {
+
+            if (lletra == majuscules[i]) {
+
+                int novaPosicio = (i + desplacament) % majuscules.length;
+
+                if (novaPosicio < 0) {
+                    novaPosicio += majuscules.length;
+                }
+
+                return majuscules[novaPosicio];
+            }
+        }
 }
